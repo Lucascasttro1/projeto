@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root { /*seletot raiz para aplicação de estilos do html no css */
+    --text-color: white;
+    --bg-url: url(./assets/back-black.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color:  rgba(255, 255, 255, 0.1);
+    --surface-color-hover:  rgba(255, 255, 255, 0.05);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(./assets/moon-stars.svg);
+
+    
+
+}    
+
+.light {
+    --text-color: black;
+    --bg-url: url(./assets/back-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color:  rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./assets/sun.svg);
+       
+
+
+}
+
+  
+
+
+
+body {
+    /*
+    background-image: url(./assets/assets/bg-mobile.jpg); (aqui é pra identificar a imagem que já tá dentro da pasta projeto)
+    background-repeat: no-repeat; (aqui faz com que a imagem não se repita varias vezes, dai ela vai pro canto esquerdo da tela)
+    background-position: top center; (aqui ela reposiciona e fica ocentro da página)
+    background-size: cover; (aqui se adequa ao tamanho do disositivo em que está sendo visualizado)
+    */
+
+    /*background color image repeat position/size ou */
+
+
+    background: var(--bg-url) no-repeat top center/cover;
+    
+}
+
+body * { /* o asterisco dps do body significa seletor universal, ou seja, as propriedades abaixo se aplicam a todos do body */
+    font-family: "Inter", sans-serif;
+    color: var(--text-color) /* variável criada a partir do root lá em cima, sempre que colocar essa variávrel será definida a 
+    cor branca */
+}
+
+#container {
+    width: 360px;
+    /* margin-right: auto;
+    margin-left: auto; (aqui ela adqua as margens ao meio da tela) ou*/
+    margin: 56px auto 0px;
+    padding: 0 24px ;
+  
+    
+}
+
+#profile {
+    text-align: center;
+    padding: 24px;
+
+
+}
+
+#profile img {
+    width: 112px;
+    margin: auto; /* alguns elementos só são block ou inline, quando isso acontece a regra do auto ñ funciona. div é um elemento block, img é um elemento inline, inline ñ aplica auto) */
+}
+
+#profile p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 8px;
+    
+}
+
+#switch {
+    position: relative;
+    width: 64px; /* ficou 64 px para se encaixar no exato tamanho do switch span que tem widht de 64 px */
+    margin: 4px auto;
+
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1; /*como se fosse um andar acima */
+    transform: translateY(-50%); /* esse juntamente com o top faz com que o botão fique extamente no meio do span. O Y indica a movimentação no eixto y(vertical) */
+
+    
+}
+
+.light #switch button { /*aqui é pra mover o botão quando se aplica o light */
+    right: 0;
+    left: initial;
+
+}
+
+
+
+
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+
+
+}
+
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* distância entre um ícone e outro. */
+    padding: 24px 0;
+}
+
+ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s; /* o fundo de cada botão tem um tempo para transicionar*/
+    
+}
+/*pseudo seletor - é o que faz as caixinhas ficarem com aquele efeito ao passar o mouse*/
+ul li a:hover {
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color)
+}
+
+#social-links {
+    display: flex; /*pra ficar um ao lado do outro, n precisaria pq já estão ao lado, porém pra habilitar o gap abaxo, é necessário
+    dar o comando de dispaly flex*/
+    justify-content: center; /*alinha os ícones ao meio */
+    padding: 24px 0; /* o primeiro se refere distancia de cima e debaixo e e outro das laterias */
+    font-size: 24px; /*tamanho dos ícones */
+}
+
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    transition: background 0.2s;
+    border-radius: 50%;
+    /* essas configurações faz com que as logos das redes sociais abaixos fiquem alinhadas ao centro do círculo*/
+}
+
+#social-links a:hover {
+    background: var(--highlight-color);
+
+}    
+
+footer {      /*footer n é uma identidicação de alguma coisa, por isso n vai # antes */
+    padding: 24px 0;
+    text-align: center; /*percebe-se que o a forma de alinhar conteudos varia de acordo com o que se alinha...texto, objeto, imagens... */
+    font-size: 14px;
+
+}
+
+/* media queries */
+
+
