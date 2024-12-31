@@ -36,7 +36,7 @@ O DevLinks é um agregador de link para uso em cartão virtual.
 
 ## 🔖 Layout
 
-Você pode visualizar p  layout do projeto através deste link
+Você pode visualizar o layout do projeto através deste link
 (https://www.figma.com/design/VSaMu4Ce51fOoND1KkvV38/DevLinks-%E2%80%A2-Projeto-Discover-(Community)?node-id=10-620&p=f&t=ddJ0UjRXatvT3gQs-0)
 
 <p align="center"> Feito com ♥ pela RocketSeat </p>
