@@ -105,13 +105,27 @@ body * { /* o asterisco dps do body significa seletor universal, ou seja, as pro
     left: 0;
     z-index: 1; /*como se fosse um andar acima */
     transform: translateY(-50%); /* esse juntamente com o top faz com que o botão fique extamente no meio do span. O Y indica a movimentação no eixto y(vertical) */
+    animation: slide-back 0.2s; /* aqui ñ precisa colocar o forwads pq o left já é zero, ficaria redundante */
 
     
 }
 
+
+
 .light #switch button { /*aqui é pra mover o botão quando se aplica o light */
-    right: 0;
-    left: initial;
+  /*  right: 0;
+    left: initial; */
+
+/* depois do animation mudamos para essa abaixo */
+
+    animation: slide-in 0.2s forwards; /* esse forwads é pra manter o botão e ele não voltar */
+
+
+}
+
+
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
 
 }
 
@@ -202,7 +216,33 @@ footer {      /*footer n é uma identidicação de alguma coisa, por isso n vai 
     .light {
         --bg-url: url(./assets/bg-desktop-light.jpg);
     }
-
 }
+
+
+
+/* animation */
+
+@keyframes slide-in { /*pode criar o nome que quiser, no caso slide-in */
+    from {
+        left: 0;
+    }
+    
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+
+
 
 
